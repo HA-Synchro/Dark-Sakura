@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dpvvdcp4xgcvq"]
+
+[ext_resource type="PackedScene" uid="uid://c4u77624fg7pv" path="res://Models/PSX_Dungeon/Clean/wall_ruin.glb" id="1_kvsd5"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wd7pc"]
+points = PackedVector3Array(0.83856726, 5.9466786, 10.5, -1.4178343, 2.5877564, 9.5, 2.0478816, 2.5877564, 9.5, -1.4178343, 6.4118457, 9.5, -1.3608783, 2.6475077, 10.5, 2.170402, 2.6475077, 10.5, 1.2711015, 5.873943, 9.5, -1.3608783, 6.3520947, 10.5, 0.55390924, 6.4118457, 9.5, 2.3412697, 2.595524, 10.420517, 0.5492484, 6.3520947, 10.5, 1.2085551, 5.9288344, 9.680349, 0.73199123, 6.286397, 10.27597, 1.3291994, 5.6927195, 9.500817, 2.0312774, 2.725651, 9.505133, 0.8962928, 5.8310013, 10.5, 2.1655643, 2.768305, 10.4986515, 0.7330289, 6.2920628, 9.5, 1.0056118, 5.816803, 10.26564, 1.2111571, 5.93346, 9.5, 0.6069739, 6.2940745, 10.5, 0.7867269, 6.206233, 10.2727375)
+
+[node name="wall_ruin" unique_id=45251970 instance=ExtResource("1_kvsd5")]
+
+[node name="Cube_087" parent="." index="0" unique_id=1682761371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -9.900001)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_087" index="0" unique_id=1912277786]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_087/StaticBody3D" index="0" unique_id=1118873202]
+shape = SubResource("ConvexPolygonShape3D_wd7pc")

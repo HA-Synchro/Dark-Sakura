@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bjdaeqfxc6ojm"]
+
+[ext_resource type="PackedScene" uid="uid://67p4yh7qgf4r" path="res://Models/PSX_Dungeon/Clean/candle.glb" id="1_awsud"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5qdgw"]
+points = PackedVector3Array(0.18568245, 1.110279, 1.4259455, -0.00011192262, 1.6999902, 1.3393365, -0.1683442, 1.6785368, 1.6401092, 0.1682005, 1.7067851, 1.6402001, -0.18637007, 1.1095369, 1.6491315, 0.18631433, 1.109268, 1.6491903, 0.009148378, 1.1107556, 1.3240575, -0.16781077, 1.6776775, 1.4349735, 0.1676539, 1.7058133, 1.4348906, -0.00011192262, 1.6999902, 1.7354203, -0.009397396, 1.1099488, 1.7512794, -0.1857379, 1.1105484, 1.4260046, -0.009365862, 1.1109594, 1.324204, 0.0091798585, 1.1097466, 1.7514246, 0.103517905, 1.7090615, 1.4055189, -0.103177294, 1.6885747, 1.6778871, 0.103517905, 1.7090615, 1.669238, -0.10284813, 1.6876771, 1.3973186, 0.009133565, 1.694588, 1.3429948, -0.009381172, 1.685962, 1.7322617, 0.009163572, 1.6955196, 1.7323929, -0.009352092, 1.6850884, 1.3431066, -0.18374406, 1.1781032, 1.4364617, 0.18377678, 1.1777251, 1.4362793, 0.12087726, 1.7053875, 1.6676313, 0.12048595, 1.7044241, 1.4075469)
+
+[node name="candle" unique_id=1829040910 instance=ExtResource("1_awsud")]
+
+[node name="Cylinder_027" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, -1.54)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder_027" parent_id_path=PackedInt32Array(1239334382) index="0" unique_id=718595901]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder_027/StaticBody3D" index="0" unique_id=1600965052]
+shape = SubResource("ConvexPolygonShape3D_5qdgw")

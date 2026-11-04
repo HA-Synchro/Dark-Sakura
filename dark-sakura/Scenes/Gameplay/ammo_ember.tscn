@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://df7k3nav8p2qx"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/ammo_ember.gd" id="1_ammo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ammo"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ammo"]
+shading_mode = 0
+albedo_color = Color(0.72, 0.22, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ammo"]
+material = SubResource("StandardMaterial3D_ammo")
+radius = 0.13
+height = 0.28
+radial_segments = 6
+rings = 3
+
+[node name="AmmoEmber" type="Area3D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_ammo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ammo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ammo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.78, 0.26, 1, 1)
+light_energy = 2.4
+omni_range = 3.6

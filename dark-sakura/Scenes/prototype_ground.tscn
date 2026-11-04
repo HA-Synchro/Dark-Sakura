@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://w45hes46sswr"]
+
+[ext_resource type="Texture2D" uid="uid://c1aafea2beg6c" path="res://Textures/Prototype/PNG/Dark/texture_04.png" id="1_nlvss"]
+[ext_resource type="Texture2D" uid="uid://sdb2dpei7lc8" path="res://Textures/Prototype/PNG/Green/texture_03.png" id="2_hxnqn"]
+[ext_resource type="Texture2D" uid="uid://b4btbm3kecsmh" path="res://Textures/Prototype/PNG/Purple/texture_01.png" id="3_brruq"]
+[ext_resource type="Texture2D" uid="uid://b6mf7b4354e7k" path="res://Textures/Prototype/PNG/Orange/texture_04.png" id="4_62sqg"]
+[ext_resource type="Texture2D" uid="uid://b3r63risq4elp" path="res://Textures/Prototype/PNG/Red/texture_06.png" id="5_iw1l3"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="6_brruq"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/dark_sakura_world.tscn" id="8_b7fpi"]
+[ext_resource type="PackedScene" path="res://Scenes/Effects/sakura_petals.tscn" id="9_crjqx"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/psx_post_process.tscn" id="11_x1js2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_brruq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_62sqg"]
+sky_material = SubResource("ProceduralSkyMaterial_brruq")
+
+[sub_resource type="Environment" id="Environment_iw1l3"]
+background_mode = 2
+sky = SubResource("Sky_62sqg")
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.349
+volumetric_fog_albedo = Color(0.3833983, 0.000102277845, 0.38425168, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tugb3"]
+albedo_texture = ExtResource("1_nlvss")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53xyg"]
+albedo_texture = ExtResource("2_hxnqn")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tekgq"]
+albedo_texture = ExtResource("3_brruq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk1kf"]
+albedo_texture = ExtResource("4_62sqg")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rn123"]
+albedo_texture = ExtResource("5_iw1l3")
+uv2_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgls1"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.22, 0.55, 0.9)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_u1g3w"]
+material = SubResource("StandardMaterial3D_cgls1")
+size = Vector2(0.08, 0.14)
+
+[node name="PrototypeGround" type="Node3D" unique_id=590302374]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=438383492]
+environment = SubResource("Environment_iw1l3")
+
+[node name="Ground" type="CSGBox3D" parent="." unique_id=989577641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_tugb3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=429670217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 1.6, 1.8)
+use_collision = true
+size = Vector3(1, 3.2, 2)
+material = SubResource("StandardMaterial3D_53xyg")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=2112497740]
+transform = Transform3D(0.46485597, 0, -0.8853863, 0, 1, 0, 0.8853863, 0, 0.46485597, -6.2, 1.6, -7.1000004)
+use_collision = true
+size = Vector3(1, 3.2, 2)
+material = SubResource("StandardMaterial3D_tekgq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=368271210]
+transform = Transform3D(-0.7349039, 0, -0.6781713, 0, 1, 0, 0.6781713, 0, -0.7349039, 2.352952, 1.6, -7.1000004)
+use_collision = true
+size = Vector3(1, 3.2, 2)
+material = SubResource("StandardMaterial3D_yk1kf")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1578740956]
+transform = Transform3D(-0.977049, 0, 0.21301496, 0, 1, 0, -0.21301496, 0, -0.977049, 2.352952, 1.6, 3.3659172)
+use_collision = true
+size = Vector3(1, 3.2, 2)
+material = SubResource("StandardMaterial3D_rn123")
+
+[node name="Player" parent="." unique_id=928495562 instance=ExtResource("6_brruq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20057106, 1.1000005, -0.6011863)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2071709854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7612071, 2.5982046)
+light_color = Color(0.3892567, 0.00010393836, 0.38925385, 1)
+omni_range = 5.715673
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1769689911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7612071, -5.2121673)
+light_color = Color(0.3892567, 0.00010393836, 0.38925385, 1)
+omni_range = 5.715673
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=699186940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.635208, 1.7612071, -5.2121673)
+light_color = Color(0.3892567, 0.00010393836, 0.38925385, 1)
+omni_range = 5.715673
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1499684788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.635208, 1.7612071, -0.53927994)
+light_color = Color(0.3892567, 0.00010393836, 0.38925385, 1)
+omni_range = 5.715673
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1919476215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8547192, 1.7612071, -0.53927994)
+light_color = Color(0.3892567, 0.00010393836, 0.38925385, 1)
+omni_range = 5.715673
+
+[node name="DarkSakuraWorld" parent="." unique_id=1974876950 instance=ExtResource("8_b7fpi")]
+
+[node name="SakuraPetals" parent="." unique_id=197913566 instance=ExtResource("9_crjqx")]
+mesh = SubResource("QuadMesh_u1g3w")
+
+[node name="PSXPostProcess" parent="." unique_id=1847633918 instance=ExtResource("11_x1js2")]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b2s4p7m8k9l01"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/seal_pickup.gd" id="1_seal"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_seal"]
+radius = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_seal"]
+shading_mode = 0
+albedo_color = Color(1, 0.2, 0.6, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_seal"]
+material = SubResource("StandardMaterial3D_seal")
+size = Vector3(0.5, 0.7, 0.3)
+
+[node name="SealPickup" type="Area3D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_seal")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_seal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PrismMesh_seal")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_color = Color(1, 0.25, 0.65, 1)
+light_energy = 2.5
+omni_range = 6.0

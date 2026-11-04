@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bets2t4waa8d1"]
+
+[ext_resource type="PackedScene" uid="uid://bbol6bthjk4kg" path="res://Models/PSX_Dungeon/Clean/stairs.glb" id="1_ry32d"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xyh5a"]
+points = PackedVector3Array(0.6980647, 11.428521, 7.031348, -1.970564, 10, 3.0294302, -1.970564, 10, 6.970172, 1.9701784, 10, 6.9697866, 2.0317461, 12.063492, 2.968254, 1.9701784, 10, 3.029816, 2.0317461, 12.063492, 7.031348, -1.9677072, 10.095412, 2.968254, -1.9677072, 10.095412, 7.031348, 1.9681048, 12.063492, 2.968254, 1.9681048, 12.063492, 7.031348, -2.0317461, 10.031834, 7.031348, -2.0317461, 10.031834, 2.968254, -0.8253471, 10.666803, 2.968254, -1.8408225, 10.158991, 7.031348)
+
+[node name="stairs" unique_id=1132489918 instance=ExtResource("1_ry32d")]
+
+[node name="Cube_037" parent="." index="0" unique_id=1521786202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.9718, -5.685569)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_037" index="0" unique_id=924075176]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_037/StaticBody3D" index="0" unique_id=1798160384]
+shape = SubResource("ConvexPolygonShape3D_xyh5a")

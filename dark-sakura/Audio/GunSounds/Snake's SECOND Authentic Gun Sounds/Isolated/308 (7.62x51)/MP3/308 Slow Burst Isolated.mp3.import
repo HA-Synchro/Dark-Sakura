@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi68y4r3okaph"
+path="res://.godot/imported/308 Slow Burst Isolated.mp3-095a0d6ed14c5f7d57d4e23a18e4c804.mp3str"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/Isolated/308 (7.62x51)/MP3/308 Slow Burst Isolated.mp3"
+dest_files=["res://.godot/imported/308 Slow Burst Isolated.mp3-095a0d6ed14c5f7d57d4e23a18e4c804.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c8m3p5k2w81qx"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/sakura_ember.gd" id="1_ember"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ember"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ember"]
+shading_mode = 0
+albedo_color = Color(1, 0.35, 0.75, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ember"]
+material = SubResource("StandardMaterial3D_ember")
+radius = 0.12
+height = 0.24
+
+[node name="SakuraEmber" type="Area3D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_ember")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ember")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ember")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.3, 0.7, 1)
+light_energy = 2.0
+omni_range = 3.5

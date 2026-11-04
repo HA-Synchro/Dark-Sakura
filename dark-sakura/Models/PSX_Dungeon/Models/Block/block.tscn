@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ctnqxelm5gh0a"]
+
+[ext_resource type="PackedScene" uid="uid://sjjhgov05h7y" path="res://Models/PSX_Dungeon/Clean/block.glb" id="1_jvq0q"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iq011"]
+points = PackedVector3Array(-2, 10.000783, 8.000783, 1.9999, 13.999117, 11.999117, 2, 10.000783, 11.999217, -2, 13.999217, 11.999217, 1.9999, 13.999117, 8.000883, -2, 10.000783, 11.999217, -2, 13.999217, 8.000783, 1.9999, 10.000883, 8.000883)
+
+[node name="block" unique_id=526679579 instance=ExtResource("1_jvq0q")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_042" parent_id_path=PackedInt32Array(1956330369) index="0" unique_id=935219744]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_042/StaticBody3D" index="0" unique_id=1030320611]
+shape = SubResource("ConvexPolygonShape3D_iq011")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byn8vctnpywcv"
+path="res://.godot/imported/AR PolyMag Pack.mp3-8d2253afbe3cc643bf3c78f28899904b.mp3str"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/& More/Mag Pack/MP3/AR PolyMag Pack.mp3"
+dest_files=["res://.godot/imported/AR PolyMag Pack.mp3-8d2253afbe3cc643bf3c78f28899904b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

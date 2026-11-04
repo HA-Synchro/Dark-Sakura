@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://cckuqlo3ey460"]
+
+[ext_resource type="Script" uid="uid://b58v31fgmto72" path="res://Scripts/Player/player.gd" id="1_xpcdj"]
+[ext_resource type="PackedScene" uid="uid://db6ydi75y4wcw" path="res://Scenes/Player/Pistol.tscn" id="2_mtuoh"]
+[ext_resource type="AudioStream" uid="uid://c610ic88v4g5w" path="res://Audio/3rd.mp3" id="3_xpcdj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dd0ac"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0u5uq"]
+bg_color = Color(0.9, 0.15, 0.4, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlvik"]
+bg_color = Color(0.3, 0.8, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Player" type="CharacterBody3D" unique_id=1601814838]
+script = ExtResource("1_xpcdj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=150392892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_dd0ac")
+
+[node name="Head" type="Node3D" parent="." unique_id=1578105995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1500491072]
+current = true
+fov = 85.0
+near = 0.02
+
+[node name="WeaponHolder" type="Node3D" parent="Head/Camera3D" unique_id=1498667817]
+
+[node name="Pistol" parent="Head/Camera3D/WeaponHolder" unique_id=2016118927 instance=ExtResource("2_mtuoh")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1860597025]
+
+[node name="DamageVignette" type="ColorRect" parent="HUD" unique_id=2015661611]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.7, 0.05, 0.25, 0.6)
+
+[node name="Crosshair" type="CenterContainer" parent="HUD" unique_id=68649670]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterDot" type="ColorRect" parent="HUD/Crosshair" unique_id=818544396]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="Hitmarker" type="Control" parent="HUD/Crosshair" unique_id=678371112]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Tick0" type="ColorRect" parent="HUD/Crosshair/Hitmarker" unique_id=1482268175]
+custom_minimum_size = Vector2(8, 2)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 11.0
+rotation = 0.7853982
+pivot_offset = Vector2(4, 1)
+mouse_filter = 2
+color = Color(1, 0.25, 0.45, 0.95)
+
+[node name="Tick1" type="ColorRect" parent="HUD/Crosshair/Hitmarker" unique_id=2015203995]
+custom_minimum_size = Vector2(8, 2)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 11.0
+rotation = 2.3561945
+pivot_offset = Vector2(4, 1)
+mouse_filter = 2
+color = Color(1, 0.25, 0.45, 0.95)
+
+[node name="Tick2" type="ColorRect" parent="HUD/Crosshair/Hitmarker" unique_id=443296834]
+custom_minimum_size = Vector2(8, 2)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 11.0
+rotation = 3.9269907
+pivot_offset = Vector2(4, 1)
+mouse_filter = 2
+color = Color(1, 0.25, 0.45, 0.95)
+
+[node name="Tick3" type="ColorRect" parent="HUD/Crosshair/Hitmarker" unique_id=690122834]
+custom_minimum_size = Vector2(8, 2)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 8.0
+offset_bottom = 11.0
+rotation = 5.497787
+pivot_offset = Vector2(4, 1)
+mouse_filter = 2
+color = Color(1, 0.25, 0.45, 0.95)
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=1107367663]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="VBoxBottomLeft" type="VBoxContainer" parent="HUD/MarginContainer" unique_id=1560955611]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="HealthLabel" type="Label" parent="HUD/MarginContainer/VBoxBottomLeft" unique_id=1362140550]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+text = "100 HP"
+
+[node name="HealthBar" type="ProgressBar" parent="HUD/MarginContainer/VBoxBottomLeft" unique_id=483675778]
+custom_minimum_size = Vector2(180, 12)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_0u5uq")
+value = 100.0
+show_percentage = false
+
+[node name="DashBar" type="ProgressBar" parent="HUD/MarginContainer/VBoxBottomLeft" unique_id=681370921]
+custom_minimum_size = Vector2(180, 6)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_jlvik")
+value = 100.0
+show_percentage = false
+
+[node name="VBoxBottomRight" type="VBoxContainer" parent="HUD/MarginContainer" unique_id=95675166]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="AmmoLabel" type="Label" parent="HUD/MarginContainer/VBoxBottomRight" unique_id=321968675]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 28
+text = "7 / 7  [49]"
+
+[node name="GameOverScreen" type="Control" parent="HUD" unique_id=981029481]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="HUD/GameOverScreen" unique_id=981029482]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.08, 0.01, 0.02, 0.88)
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/GameOverScreen" unique_id=981029483]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="HUD/GameOverScreen/CenterContainer" unique_id=981029484]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="HUD/GameOverScreen/CenterContainer/VBox" unique_id=981029485]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.12, 0.25, 1)
+theme_override_colors/font_shadow_color = Color(0.15, 0, 0, 0.95)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 32
+text = "YOU WERE CONSUMED BY THE ROOTS"
+horizontal_alignment = 1
+
+[node name="SubLabel" type="Label" parent="HUD/GameOverScreen/CenterContainer/VBox" unique_id=981029486]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.55, 0.62, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 18
+text = "The parasitic blossom god claims your flesh."
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="HUD/GameOverScreen/CenterContainer/VBox" unique_id=981029487]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RestartPrompt" type="Label" parent="HUD/GameOverScreen/CenterContainer/VBox" unique_id=981029488]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 0.1, 0, 0.95)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 20
+text = "[ R ]  RETRY FROM SANCTUARY  •  [ M ]  MAIN MENU"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=636419129]
+stream = ExtResource("3_xpcdj")
+volume_db = -28.411
+autoplay = true

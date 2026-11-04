@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bab3rr4t10n01"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/enemy_aberration.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://Models/Enemies/Aberration/aberration.glb" id="2_model"]
+[ext_resource type="Script" path="res://Scripts/Enemies/weakpoint.gd" id="3_weak"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.95
+height = 3.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_head"]
+radius = 0.55
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_weak"]
+radius = 0.45
+
+[node name="EnemyAberration" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Head" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, 0.15)
+collision_layer = 2
+collision_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head"]
+shape = SubResource("SphereShape3D_head")
+
+[node name="Weakpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35, -0.45)
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("3_weak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Weakpoint"]
+shape = SubResource("SphereShape3D_weak")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Weakpoint"]
+light_color = Color(1, 0.2, 0.65, 1)
+light_energy = 3.2
+omni_range = 5.5
+
+[node name="Model" parent="." instance=ExtResource("2_model")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)

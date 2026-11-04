@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dbysr1tjvkloy"]
+
+[ext_resource type="PackedScene" uid="uid://cihkl3cqdvyl3" path="res://Models/PSX_Dungeon/Clean/wall_decor.glb" id="1_0sit0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwn8t"]
+size = Vector3(0.8660254, 1.1264589, 0.32000005)
+
+[node name="wall_decor" unique_id=1736231925 instance=ExtResource("1_0sit0")]
+
+[node name="Torus" parent="." index="0" unique_id=1054751005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 1.4000001)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Torus" index="0" unique_id=1198827888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, -0.29540437, -1.4074535)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Torus/StaticBody3D" index="0" unique_id=1363216886]
+shape = SubResource("BoxShape3D_rwn8t")

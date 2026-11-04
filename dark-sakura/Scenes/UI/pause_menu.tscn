@@ -1,0 +1,128 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/pause_menu.gd" id="1_rrvs5"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=97855988]
+process_mode = 3
+layer = 10
+visible = false
+script = ExtResource("1_rrvs5")
+
+[node name="MainControl" type="Control" parent="." unique_id=909182429]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="DarkBackdrop" type="ColorRect" parent="MainControl" unique_id=2032196730]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.03, 0.008, 0.02, 0.82)
+
+[node name="UIMargin" type="MarginContainer" parent="MainControl" unique_id=1187518715]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 54
+
+[node name="MainHBox" type="HBoxContainer" parent="MainControl/UIMargin" unique_id=616974945]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="MainControl/UIMargin/MainHBox" unique_id=1226055455]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="TitleBox" type="VBoxContainer" parent="MainControl/UIMargin/MainHBox/LeftColumn" unique_id=948514037]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="LabelSub" type="Label" parent="MainControl/UIMargin/MainHBox/LeftColumn/TitleBox" unique_id=574547536]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.75, 0.45, 0.6, 0.9)
+text = "D A R K   S A K U R A"
+
+[node name="LabelPause" type="Label" parent="MainControl/UIMargin/MainHBox/LeftColumn/TitleBox" unique_id=2036565441]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+theme_override_colors/font_color = Color(1, 0.16, 0.43, 1)
+theme_override_colors/font_shadow_color = Color(0.25, 0.02, 0.1, 0.95)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+text = "PAUSED"
+
+[node name="LabelDesc" type="Label" parent="MainControl/UIMargin/MainHBox/LeftColumn/TitleBox" unique_id=1049580631]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.65, 0.52, 0.58, 1)
+text = "Expedition suspended in the roots."
+
+[node name="TitleDivider" type="ColorRect" parent="MainControl/UIMargin/MainHBox/LeftColumn" unique_id=753240202]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(1, 0.16, 0.43, 0.8)
+
+[node name="ButtonList" type="VBoxContainer" parent="MainControl/UIMargin/MainHBox/LeftColumn" unique_id=1487932438]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BtnResume" type="Button" parent="MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=2139934230]
+layout_mode = 2
+text = "•  RESUME EXPEDITION"
+
+[node name="BtnGuide" type="Button" parent="MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=598882331]
+layout_mode = 2
+text = "•  HOW TO SURVIVE"
+
+[node name="BtnSettings" type="Button" parent="MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=501652887]
+layout_mode = 2
+text = "•  SETTINGS"
+
+[node name="BtnRetry" type="Button" parent="MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=939866014]
+layout_mode = 2
+text = "•  RETRY FROM SANCTUARY"
+
+[node name="BtnQuit" type="Button" parent="MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=1908548492]
+layout_mode = 2
+text = "•  QUIT TO MAIN MENU"
+
+[node name="@Control@2" type="Control" parent="MainControl/UIMargin/MainHBox/LeftColumn" unique_id=654651899]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="LabelTip" type="Label" parent="MainControl/UIMargin/MainHBox/LeftColumn" unique_id=282211722]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.65, 0.48, 0.55, 0.85)
+text = "[ ESC ] RESUME  •  [ ARROWS / MOUSE ] NAVIGATE"
+
+[node name="ModalLayer" type="CanvasLayer" parent="." unique_id=156956155]
+process_mode = 3
+layer = 25
+
+[node name="ModalCenter" type="CenterContainer" parent="ModalLayer" unique_id=198366167]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ModalGuide" type="PanelContainer" parent="ModalLayer/ModalCenter" unique_id=1699613118]
+visible = false
+custom_minimum_size = Vector2(660, 500)
+layout_mode = 2
+
+[node name="ModalSettings" type="PanelContainer" parent="ModalLayer/ModalCenter" unique_id=285050129]
+visible = false
+custom_minimum_size = Vector2(500, 380)
+layout_mode = 2

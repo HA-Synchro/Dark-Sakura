@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Environment/sakura_petals.gd" id="1_g3jax"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgls1"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.22, 0.55, 0.9)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_u1g3w"]
+material = SubResource("StandardMaterial3D_cgls1")
+size = Vector2(0.08, 0.14)
+
+[node name="SakuraPetals" type="CPUParticles3D" unique_id=197913566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+amount = 140
+lifetime = 6.0
+preprocess = 2.0
+mesh = SubResource("QuadMesh_u1g3w")
+emission_shape = 3
+emission_box_extents = Vector3(16, 6, 16)
+direction = Vector3(0.3, -1, 0.2)
+gravity = Vector3(0.2, -0.6, 0.1)
+initial_velocity_min = 0.8
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+script = ExtResource("1_g3jax")

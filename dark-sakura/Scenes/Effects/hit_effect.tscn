@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c6x7p8r9y2k10"]
+
+[ext_resource type="Script" path="res://Scripts/Effects/hit_effect.gd" id="1_hit"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spark"]
+shading_mode = 0
+albedo_color = Color(1, 0.2, 0.55, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_spark"]
+material = SubResource("StandardMaterial3D_spark")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="HitEffect" type="Node3D"]
+script = ExtResource("1_hit")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.95
+mesh = SubResource("BoxMesh_spark")
+direction = Vector3(0, 0, -1)
+spread = 45.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+damping_min = 6.0
+damping_max = 10.0
+scale_amount_min = 0.4
+scale_amount_max = 1.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.25, 0.6, 1)
+light_energy = 2.0
+omni_range = 2.5

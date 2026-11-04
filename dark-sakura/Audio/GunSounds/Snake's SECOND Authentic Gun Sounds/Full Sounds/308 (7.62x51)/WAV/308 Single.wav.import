@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cj1mi57fxxxjl"
+path="res://.godot/imported/308 Single.wav-006ebe7a531b81edec0006564cf81315.sample"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/Full Sounds/308 (7.62x51)/WAV/308 Single.wav"
+dest_files=["res://.godot/imported/308 Single.wav-006ebe7a531b81edec0006564cf81315.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

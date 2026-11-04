@@ -1,0 +1,353 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_ru8vt"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/dark_sakura_world.tscn" id="2_ypsd1"]
+[ext_resource type="PackedScene" path="res://Scenes/Effects/sakura_petals.tscn" id="3_xp0kt"]
+[ext_resource type="Script" path="res://Scripts/Environment/sakura_petals.gd" id="4_1yfdm"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/FloorTile/floor_tile.tscn" id="5_3h8o7"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/Arch/arch.tscn" id="6_q6o50"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/SkullWall/skull_wall.tscn" id="7_46hhv"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/Pillar/pillar.tscn" id="8_oslnl"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/PillarRuin/pillar_ruin.tscn" id="9_tr32r"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/Candle/candle.tscn" id="10_hbsmt"]
+[ext_resource type="PackedScene" path="res://Models/PSX_Dungeon/Models/Chandlier/chandelier.tscn" id="11_0gipi"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/psx_post_process.tscn" id="12_ayn3n"]
+[ext_resource type="Script" path="res://Scripts/Environment/psx_post_process.gd" id="13_py2ge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgls1"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.22, 0.55, 0.9)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_u1g3w"]
+material = SubResource("StandardMaterial3D_cgls1")
+size = Vector2(0.08, 0.14)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifxty"]
+shading_mode = 0
+albedo_color = Color(1, 0.15, 0.55, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wm46x"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="MainMenu" type="Node3D" unique_id=1360220145]
+script = ExtResource("1_ru8vt")
+
+[node name="DarkSakuraWorld" type="Node3D" parent="." unique_id=1974876950 instance=ExtResource("2_ypsd1")]
+
+[node name="SakuraPetals" type="CPUParticles3D" parent="." unique_id=197913566 instance=ExtResource("3_xp0kt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -2)
+amount = 140
+lifetime = 6.0
+preprocess = 2.0
+mesh = SubResource("QuadMesh_u1g3w")
+emission_shape = 3
+emission_box_extents = Vector3(16, 6, 16)
+direction = Vector3(0.3, -1, 0.2)
+gravity = Vector3(0.2, -0.6, 0.1)
+initial_velocity_min = 0.8
+initial_velocity_max = 2.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+script = ExtResource("4_1yfdm")
+
+[node name="MenuCamera" type="Camera3D" parent="." unique_id=26156228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 2.2)
+current = true
+
+[node name="Diorama" type="Node3D" parent="." unique_id=623772642]
+
+[node name="Floor" type="Node3D" parent="Diorama" unique_id=2140791958]
+
+[node name="floor_tile" type="Node3D" parent="Diorama/Floor" unique_id=1059389394 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -12)
+
+[node name="@Node3D@2" type="Node3D" parent="Diorama/Floor" unique_id=222272333 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
+
+[node name="@Node3D@3" type="Node3D" parent="Diorama/Floor" unique_id=1730862331 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
+
+[node name="@Node3D@4" type="Node3D" parent="Diorama/Floor" unique_id=1960708046 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="@Node3D@5" type="Node3D" parent="Diorama/Floor" unique_id=159156094 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
+
+[node name="@Node3D@6" type="Node3D" parent="Diorama/Floor" unique_id=437957451 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12)
+
+[node name="@Node3D@7" type="Node3D" parent="Diorama/Floor" unique_id=1255155018 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+
+[node name="@Node3D@8" type="Node3D" parent="Diorama/Floor" unique_id=355731923 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="@Node3D@9" type="Node3D" parent="Diorama/Floor" unique_id=2030676821 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="@Node3D@10" type="Node3D" parent="Diorama/Floor" unique_id=1706063502 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="@Node3D@11" type="Node3D" parent="Diorama/Floor" unique_id=1620666499 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="@Node3D@12" type="Node3D" parent="Diorama/Floor" unique_id=561548326 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="@Node3D@13" type="Node3D" parent="Diorama/Floor" unique_id=816242106 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="@Node3D@14" type="Node3D" parent="Diorama/Floor" unique_id=1803229898 instance=ExtResource("5_3h8o7")]
+
+[node name="@Node3D@15" type="Node3D" parent="Diorama/Floor" unique_id=563615844 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="@Node3D@16" type="Node3D" parent="Diorama/Floor" unique_id=396008643 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
+
+[node name="@Node3D@17" type="Node3D" parent="Diorama/Floor" unique_id=1775906096 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
+
+[node name="@Node3D@18" type="Node3D" parent="Diorama/Floor" unique_id=1228252747 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="@Node3D@19" type="Node3D" parent="Diorama/Floor" unique_id=938636832 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="@Node3D@20" type="Node3D" parent="Diorama/Floor" unique_id=379872993 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="@Node3D@21" type="Node3D" parent="Diorama/Floor" unique_id=281064510 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
+
+[node name="@Node3D@22" type="Node3D" parent="Diorama/Floor" unique_id=1381125275 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+
+[node name="@Node3D@23" type="Node3D" parent="Diorama/Floor" unique_id=1092502499 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -4)
+
+[node name="@Node3D@24" type="Node3D" parent="Diorama/Floor" unique_id=1780830790 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="@Node3D@25" type="Node3D" parent="Diorama/Floor" unique_id=882109651 instance=ExtResource("5_3h8o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="arch" type="Node3D" parent="Diorama" unique_id=420703952 instance=ExtResource("6_q6o50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="skull_wall" type="Node3D" parent="Diorama" unique_id=1057240122 instance=ExtResource("7_46hhv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="@Node3D@26" type="Node3D" parent="Diorama" unique_id=2021978916 instance=ExtResource("7_46hhv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="pillar" type="Node3D" parent="Diorama" unique_id=1856144860 instance=ExtResource("8_oslnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0, -3.5)
+
+[node name="@Node3D@27" type="Node3D" parent="Diorama" unique_id=1637455641 instance=ExtResource("8_oslnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, -3.5)
+
+[node name="pillar_ruin" type="Node3D" parent="Diorama" unique_id=909942388 instance=ExtResource("9_tr32r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1)
+
+[node name="@Node3D@28" type="Node3D" parent="Diorama" unique_id=1733609348 instance=ExtResource("9_tr32r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1)
+
+[node name="candle" type="Node3D" parent="Diorama" unique_id=1829040910 instance=ExtResource("10_hbsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -1.8)
+
+[node name="CandleLightLeft" type="OmniLight3D" parent="Diorama" unique_id=1193174305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0.8, -1.8)
+light_color = Color(1, 0.55, 0.3, 1)
+light_energy = 1.4
+omni_range = 6.0
+
+[node name="@Node3D@29" type="Node3D" parent="Diorama" unique_id=720381779 instance=ExtResource("10_hbsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, -1.8)
+
+[node name="CandleLightRight" type="OmniLight3D" parent="Diorama" unique_id=1611630742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0.8, -1.8)
+light_color = Color(1, 0.55, 0.3, 1)
+light_energy = 1.4
+omni_range = 6.0
+
+[node name="chandelier" type="Node3D" parent="Diorama" unique_id=1173392740 instance=ExtResource("11_0gipi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -4)
+
+[node name="ChandelierLight" type="OmniLight3D" parent="Diorama" unique_id=1941803175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -4)
+light_color = Color(1, 0.35, 0.65, 1)
+light_energy = 2.2
+omni_range = 10.0
+
+[node name="FloatingRune" type="Node3D" parent="Diorama" unique_id=1948381930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -6)
+
+[node name="RuneCore" type="MeshInstance3D" parent="Diorama/FloatingRune" unique_id=14538117]
+material_override = SubResource("StandardMaterial3D_ifxty")
+mesh = SubResource("BoxMesh_wm46x")
+
+[node name="RuneLight" type="OmniLight3D" parent="Diorama/FloatingRune" unique_id=256942833]
+light_color = Color(1, 0.2, 0.65, 1)
+light_energy = 3.6
+omni_range = 14.0
+
+[node name="MenuUI" type="CanvasLayer" parent="." unique_id=2032271565]
+layer = 10
+
+[node name="MainControl" type="Control" parent="MenuUI" unique_id=1000655451]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="UIGradient" type="ColorRect" parent="MenuUI/MainControl" unique_id=1384382767]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.005, 0.015, 0.35)
+
+[node name="UIMargin" type="MarginContainer" parent="MenuUI/MainControl" unique_id=840914624]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 54
+
+[node name="MainHBox" type="HBoxContainer" parent="MenuUI/MainControl/UIMargin" unique_id=1667510010]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="MenuUI/MainControl/UIMargin/MainHBox" unique_id=287796460]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="TitleSpacer" type="Control" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn" unique_id=483080174]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleDivider" type="ColorRect" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn" unique_id=206756827]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(1, 0.16, 0.43, 0.8)
+
+[node name="ButtonList" type="VBoxContainer" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn" unique_id=1140435838]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BtnStart" type="Button" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=892183955]
+layout_mode = 2
+text = "•  ENTER THE LABYRINTH"
+
+[node name="BtnGuide" type="Button" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=426449041]
+layout_mode = 2
+text = "•  HOW TO SURVIVE"
+
+[node name="BtnSettings" type="Button" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=493332685]
+layout_mode = 2
+text = "•  SETTINGS"
+
+[node name="BtnQuit" type="Button" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn/ButtonList" unique_id=658555324]
+layout_mode = 2
+text = "•  ABANDON SANITY"
+
+[node name="@Control@30" type="Control" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn" unique_id=904190711]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="LabelVersion" type="Label" parent="MenuUI/MainControl/UIMargin/MainHBox/LeftColumn" unique_id=1391220932]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.65, 0.48, 0.55, 0.85)
+text = "v1.0.0 • PSX RETRO FPS HORROR • GODOT 4.7"
+
+[node name="FadeOverlay" type="ColorRect" parent="MenuUI/MainControl" unique_id=1661432833]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="PSXPostProcess" type="CanvasLayer" parent="." unique_id=1847633918 instance=ExtResource("12_ayn3n")]
+layer = 15
+script = ExtResource("13_py2ge")
+
+[node name="TitleUI" type="CanvasLayer" parent="." unique_id=1861415352]
+layer = 25
+
+[node name="TitleControl" type="Control" parent="TitleUI" unique_id=1288612162]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TitleMargin" type="MarginContainer" parent="TitleUI/TitleControl" unique_id=536094022]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 54
+
+[node name="TitleBox" type="VBoxContainer" parent="TitleUI/TitleControl/TitleMargin" unique_id=1815048650]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="LabelDark" type="Label" parent="TitleUI/TitleControl/TitleMargin/TitleBox" unique_id=417615577]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(0.94, 0.9, 0.92, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 0.02, 0.08, 0.95)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+text = "DARK"
+
+[node name="LabelSakura" type="Label" parent="TitleUI/TitleControl/TitleMargin/TitleBox" unique_id=226290856]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+theme_override_colors/font_color = Color(1, 0.16, 0.43, 1)
+theme_override_colors/font_shadow_color = Color(0.4, 0.02, 0.15, 0.9)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+text = "SAKURA"
+
+[node name="LabelTagline" type="Label" parent="TitleUI/TitleControl/TitleMargin/TitleBox" unique_id=1155669729]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.72, 0.52, 0.62, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.01, 0.03, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "\"The petals don't fall. They hunt.\""
+
+[node name="ModalCenter" type="CenterContainer" parent="TitleUI/TitleControl" unique_id=50255854]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ModalGuide" type="PanelContainer" parent="TitleUI/TitleControl/ModalCenter" unique_id=1743113831]
+visible = false
+custom_minimum_size = Vector2(660, 500)
+layout_mode = 2
+
+[node name="ModalSettings" type="PanelContainer" parent="TitleUI/TitleControl/ModalCenter" unique_id=256974111]
+visible = false
+custom_minimum_size = Vector2(500, 380)
+layout_mode = 2

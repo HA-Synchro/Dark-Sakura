@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rg1xg8l0h33d"
+path="res://.godot/imported/308 Burst.mp3-fc2157909de2bbf47271e766f6528163.mp3str"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/Full Sounds/308 (7.62x51)/MP3/308 Burst.mp3"
+dest_files=["res://.godot/imported/308 Burst.mp3-fc2157909de2bbf47271e766f6528163.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

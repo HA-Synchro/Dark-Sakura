@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvdyp78l8qyiq"
+path="res://.godot/imported/9mm Burst.mp3-8d21c3b30fdb9dcf65adef9e1e95fe71.mp3str"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/Full Sounds/9mm/MP3/9mm Burst.mp3"
+dest_files=["res://.godot/imported/9mm Burst.mp3-8d21c3b30fdb9dcf65adef9e1e95fe71.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

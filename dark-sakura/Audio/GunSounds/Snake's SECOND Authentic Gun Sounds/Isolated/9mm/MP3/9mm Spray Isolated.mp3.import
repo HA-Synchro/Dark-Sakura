@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxl6qonq7s8t8"
+path="res://.godot/imported/9mm Spray Isolated.mp3-b6948fafaa79eb3f2f427dd4c57de552.mp3str"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/Isolated/9mm/MP3/9mm Spray Isolated.mp3"
+dest_files=["res://.godot/imported/9mm Spray Isolated.mp3-b6948fafaa79eb3f2f427dd4c57de552.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://66w46cn51l2l"]
+
+[ext_resource type="PackedScene" uid="uid://cbqxgvdmeg00q" path="res://Models/PSX_Dungeon/Clean/chest.glb" id="1_krvv4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c8y6p"]
+points = PackedVector3Array(0.26, 4.8633475, 4.8684697, 0.3065244, 4, 3.2307663, -0.9896363, 4.7999997, 3.2235389, -0.9810319, 4, 4.794117, 0.9810319, 4, 4.794117, 0.98939204, 4.7999997, 3.2235823, -0.9810319, 4, 3.2309313, -0.9896363, 4.7999997, 4.800435, 0.98939204, 4.7999997, 4.800256, 0.9810319, 4, 3.2307663, -0.2855901, 4.9045815, 4.6927133, 0.28559, 4.9045815, 4.6927133, -0.26, 4.863347, 4.868469)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0hcnb"]
+points = PackedVector3Array(0.95512474, 8.791549, 1.1237073, -0.97718805, 8.0067, 0.03165409, -0.97718805, 8.0067, 1.5890474, 0.97718805, 8.0067, 1.5890474, -0.9769507, 8.617139, 1.5888584, 0.9677507, 8.6151285, 0.039174456, -0.9461915, 8.787921, 0.4999251, 0.97718805, 8.0067, 0.03165409, 0.9769507, 8.617139, 1.5888584, -0.9677507, 8.6151285, 0.039174456, -0.95512474, 8.791549, 1.1237073, 0.9461915, 8.787921, 0.4999251)
+
+[node name="chest" unique_id=647921558 instance=ExtResource("1_krvv4")]
+
+[node name="Cube_045" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_045" parent_id_path=PackedInt32Array(624502365) index="0" unique_id=815863532]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_045/StaticBody3D" index="0" unique_id=1290766322]
+shape = SubResource("ConvexPolygonShape3D_c8y6p")
+
+[node name="Cube_085" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.2, -0.8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_085" parent_id_path=PackedInt32Array(260915031) index="0" unique_id=107852845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_085/StaticBody3D" index="0" unique_id=1659197026]
+shape = SubResource("ConvexPolygonShape3D_0hcnb")

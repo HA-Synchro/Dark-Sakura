@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c44vpc0trn88v"
+path="res://.godot/imported/44 Magnum Open Cylinder.mp3-1850c47840e8fad2388b955c8d8b92a9.mp3str"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/& More/Revolver/44 Magnum/MP3/44 Magnum Open Cylinder.mp3"
+dest_files=["res://.godot/imported/44 Magnum Open Cylinder.mp3-1850c47840e8fad2388b955c8d8b92a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

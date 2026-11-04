@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Environment/psx_post_process.gd" id="1_wvow1"]
+[ext_resource type="Shader" path="res://Shaders/psx_post_process.gdshader" id="2_rck2c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8auc"]
+shader = ExtResource("2_rck2c")
+shader_parameter/enable_pixelation = true
+shader_parameter/target_resolution = Vector2(480, 270)
+shader_parameter/enable_dither = true
+shader_parameter/color_depth = 32.0
+shader_parameter/dither_strength = 0.75
+shader_parameter/vignette_intensity = 0.45
+shader_parameter/vignette_softness = null
+shader_parameter/vignette_color = Color(0.11, 0.02, 0.07, 1)
+shader_parameter/chromatic_aberration = 0.0018
+
+[node name="PSXPostProcess" type="CanvasLayer" unique_id=1847633918]
+layer = 15
+script = ExtResource("1_wvow1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1248152125]
+material = SubResource("ShaderMaterial_n8auc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

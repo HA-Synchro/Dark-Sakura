@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://co26dn8dqls4"]
+
+[ext_resource type="PackedScene" uid="uid://c7h67cyblj6kh" path="res://Models/PSX_Dungeon/Clean/crate.glb" id="1_t0dt0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ogwyk"]
+points = PackedVector3Array(-0.79999924, 3.1999998, -0.79999894, 0.79996294, 4.7998424, 0.79999995, 0.7999619, 3.1999998, 0.79999894, 0.79996294, 4.7998424, -0.79999995, -0.79999995, 4.799842, 0.79999965, -0.79999995, 4.799842, -0.79999965, 0.7999619, 3.1999998, -0.79999894, -0.79999924, 3.1999998, 0.79999894)
+
+[node name="crate" unique_id=810996841 instance=ExtResource("1_t0dt0")]
+
+[node name="Cube_044" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_044" parent_id_path=PackedInt32Array(545244935) index="0" unique_id=1683352828]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_044/StaticBody3D" index="0" unique_id=378853904]
+shape = SubResource("ConvexPolygonShape3D_ogwyk")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://crd3ved3nnu1h"]
+
+[ext_resource type="PackedScene" uid="uid://dca4hqxx8u7ic" path="res://Models/PSX_Dungeon/Clean/floor_tile.glb" id="1_0mrlf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tic1f"]
+points = PackedVector3Array(2.0317461, 10.031746, 2.0317461, -2.0317461, 9.968254, -2.0317461, -2.0317461, 10.031746, -2.0317461, 2.0317461, 9.968254, -2.0317461, -2.0317461, 9.968254, 2.0317461, -2.0317461, 10.031746, 2.0317461, 2.0317461, 10.031746, -2.0317461, 2.0317461, 9.968254, 2.0317461)
+
+[node name="floor_tile" unique_id=1059389394 instance=ExtResource("1_0mrlf")]
+
+[node name="Plane_003" parent="." index="0" unique_id=954835161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.900001, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane_003" index="0" unique_id=1935085955]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_003/StaticBody3D" index="0" unique_id=452883793]
+shape = SubResource("ConvexPolygonShape3D_tic1f")

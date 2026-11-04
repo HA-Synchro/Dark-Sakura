@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnbwienoifvd7"
+path="res://.godot/imported/9mm Spray.wav-477fd675c9a28eb8ea723c1d10fb33e0.sample"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/Full Sounds/9mm/WAV/9mm Spray.wav"
+dest_files=["res://.godot/imported/9mm Spray.wav-477fd675c9a28eb8ea723c1d10fb33e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

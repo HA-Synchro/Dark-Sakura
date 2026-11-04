@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://e3ddmaekv86e"]
+
+[ext_resource type="PackedScene" uid="uid://fnv8c4n13rg7" path="res://Models/PSX_Dungeon/Clean/skull_wall.glb" id="1_b7mde"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0psqv"]
+points = PackedVector3Array(-1.9122323, 2.5877564, 9.5, 1.8524753, 6.3520947, 10.5, 1.8524753, 2.6475077, 10.5, 1.9122323, 6.4118457, 9.5, -1.8524753, 6.3520947, 10.5, 1.9122323, 2.5877564, 9.5, -1.9122323, 6.4118457, 9.5, -1.8524753, 2.6475077, 10.5)
+
+[node name="skull_wall" unique_id=1057240122 instance=ExtResource("1_b7mde")]
+
+[node name="Cube_057" parent="." index="0" unique_id=631373673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_057" index="0" unique_id=1392860345]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_057/StaticBody3D" index="0" unique_id=2033950934]
+shape = SubResource("ConvexPolygonShape3D_0psqv")

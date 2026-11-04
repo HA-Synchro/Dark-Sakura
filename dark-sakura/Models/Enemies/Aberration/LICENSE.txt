@@ -1,0 +1,25 @@
+ABERRATION - PSX Horror Creature
+Copyright (c) 2026 Rafael Martins
+
+LICENSE
+
+You MAY:
+  - use this asset in personal and commercial projects (games, films, renders, prototypes),
+    free or paid, without limit on copies sold;
+  - modify it: edit the mesh, texture, rig and animations, and use the modified versions
+    under these same terms;
+  - include it inside a finished project, as part of the compiled/packaged game or media.
+
+You MAY NOT:
+  - resell, redistribute, share or give away the asset files themselves, original or modified,
+    on their own or as part of another asset pack, template or library;
+  - claim the asset as your own original work;
+  - use it to train AI or machine learning models.
+
+Credit is appreciated but not required:
+  "Aberration" by Rafael Martins (Blackwood Asylum: The Rake)
+
+The skeleton naming and bone layout follow the Universal Animation Library by Quaternius
+(CC0 1.0), which carries no requirements of its own.
+
+THE ASSET IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

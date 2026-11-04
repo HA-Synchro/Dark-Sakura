@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://j8ywscvar3na"
+path="res://.godot/imported/Tall_Grass_Mono_01.wav-31a56220a5d22e4b07d40f503c6e75b7.sample"
+
+[deps]
+
+source_file="res://Audio/FootSteps/Footsteps Mini Sound Pack/Tall_Grass_Mono_01.wav"
+dest_files=["res://.godot/imported/Tall_Grass_Mono_01.wav-31a56220a5d22e4b07d40f503c6e75b7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

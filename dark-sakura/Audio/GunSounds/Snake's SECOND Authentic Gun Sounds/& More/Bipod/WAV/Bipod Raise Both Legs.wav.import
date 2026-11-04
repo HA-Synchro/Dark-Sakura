@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://j0oh5224mpkr"
+path="res://.godot/imported/Bipod Raise Both Legs.wav-e4c92211441264f8816231621d167782.sample"
+
+[deps]
+
+source_file="res://Audio/GunSounds/Snake's SECOND Authentic Gun Sounds/& More/Bipod/WAV/Bipod Raise Both Legs.wav"
+dest_files=["res://.godot/imported/Bipod Raise Both Legs.wav-e4c92211441264f8816231621d167782.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
